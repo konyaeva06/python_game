@@ -46,8 +46,15 @@ while True:
                 if (index == '0'):
                     break
 
+                # Проверка ввода
+                try:
+                    index = int(index)
+                except ValueError:
+                    print('Неверный ввод! Повторите!')
+                    continue
+
                 # если получилось сделать шаг
-                if (game_step(int(index), current_player)):
+                if (game_step(index, current_player)):
                     print('Удачный ход')
 
                     if (current_player == 'X'):
